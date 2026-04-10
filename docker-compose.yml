@@ -11,14 +11,3 @@ services:
     restart: always
     ports:
       - 3000
-    networks:
-      - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.next-app-test.rule=Host(`next-app.52.48.67.57.sslip.io`)
-      - traefik.http.routers.next-app-test.entrypoints=web
-      - traefik.http.services.next-app-test.loadbalancer.server.port=3000
-
-networks:
-  dokploy-network:
-    external: true
